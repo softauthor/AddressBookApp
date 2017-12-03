@@ -1,0 +1,142 @@
+body {
+    font-family: Helvetica, Arial, Serif;
+}
+
+ul,
+li,
+h1,
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #cccccc;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+button:hover {
+    opacity: 0.6;
+}
+
+li {
+    padding: 5px;
+    cursor: pointer;
+    list-style-type: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+li:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Add Contact Module */
+
+#add-contact-module {
+    display: inline-block;
+    margin-bottom: 1px;
+}
+
+#add-contact-module #open-add-contact-form-btn {
+    background: #54bb7d;
+    font-size: 1.5em;
+    padding: 0px 5px;
+    color: white;
+}
+
+#add-contact-module form {
+    position: absolute;
+    /*margin:0;  remove the space between the button and sub nav */
+    padding: 10px;
+    width: 150px;
+    /* sub nav always take the width of the main nav because it's inside it */
+    background-color: #e1e1e1;
+    border: 1px solid #999;
+    display: none;
+}
+
+#add-contact-module form input,
+#edit-contact-module form input {
+    width: 97%;
+    margin: 2px 0;
+}
+
+#add-contact-module form button,
+#edit-contact-module form button {
+    background: #54bb7d;
+    font-size: 1em;
+    padding: 0px 10px;
+    color: white;
+    margin-top: 10px;
+}
+
+
+#add-contact-module:hover form {
+    display: block;
+}
+
+
+/* Contact List Module */
+
+#contact-list {
+    width: 170px;
+    background: #333;
+    color: white;
+    float: left;
+}
+
+#contact-list li:hover~#edit-contact-module {
+    display: none;
+}
+
+.remove-contact-btn, .edit-contact-btn {
+	padding:2px;
+}
+
+.remove-contact-btn:hover{
+	background: red;
+	
+}
+
+.edit-contact-btn:hover {
+	background: blue;
+	
+}
+
+
+
+/* Contact Item Details Module */
+
+#contact-item-details {
+    float: left;
+    width: 200px;
+    background: #333;
+    overflow: auto;
+    color: white;
+    padding: 10px;
+    margin-left: 1px;
+}
+
+
+
+/* Edit Contact Module */
+
+#edit-contact-module {
+    display:none;
+    position: absolute;
+    background-color: #e1e1e1;
+    border: 1px solid #999;
+    left: 170px;
+    padding: 10px;
+    width: 150px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Address Book - Edit Contact - Part 05</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<h1>Address Book</h1>
+
+	<!-- add contact module -->
+	<section id="add-contact-module" >
+		<button id="open-add-contact-form-btn">+</button>
+		<form>
+			<h2>Add Contact</h2>
+			first name:<br>
+			<input type='text' data-key='fname' class='add-contact-input'><br>
+			last name:<br>
+			<input type='text' data-key='lname' class='add-contact-input'><br>
+			phone:<br>
+			<input type='text' data-key='phone' class='add-contact-input'><br>
+			email:<br>
+			<input type='text' data-key='email' class='add-contact-input'><br>
+			<button type='button' id="add-contact-btn">add</button>
+		</form>
+
+	</section>
+
+
+	<!-- edit contact module -->
+	<section id="edit-contact-module" >
+		<form>
+			<h2>Edit Contact</h2>
+			first name:<br>
+			<input type='text' data-key='fname' class='edit-contact-input'><br>
+			last name:<br>
+			<input type='text' data-key='lname' class='edit-contact-input'><br>
+			phone:<br>
+			<input type='text' data-key='phone' class='edit-contact-input'><br>
+			email:<br>
+			<input type='text' data-key='email' class='edit-contact-input'><br>
+			<button type='button' id="edit-contact-btn">save</button>
+		</form>
+	</section>
+
+
+	<!-- contact list module -->
+	<section>
+		<ul id="contact-list">loading...</ul>
+	</section>
+
+	<!-- contact item details module -->
+	<section id="contact-item-details">
+		loading...
+	</section>
+
+	
+
+	<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>
+
+

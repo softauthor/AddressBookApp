@@ -1,0 +1,69 @@
+body {
+    font-family: Helvetica, Arial, Serif;
+}
+
+ul,
+li,
+h1,
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #cccccc;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+button:hover {
+    opacity: 0.6;
+}
+
+li {
+    padding: 5px;
+    cursor: pointer;
+    list-style-type: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+li:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+/* Contact List Module */
+
+#contact-list {
+    width: 170px;
+    background: #333;
+    color: white;
+    float: left;
+}
+
+
+
+
+/* Contact Item Details Module */
+
+#contact-item-details {
+    float: left;
+    width: 200px;
+    background: #333;
+    overflow: auto;
+    color: white;
+    padding: 10px;
+    margin-left: 1px;
+}
+
