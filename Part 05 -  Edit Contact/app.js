@@ -1,3 +1,4 @@
+
 /*
 
     Application Name: Address Book
@@ -209,6 +210,7 @@ class AddressBookView {
             selectedIndex = e;
         }
 
+    
         // passing it into the removeContact method which is in the controller AddressBookCtrl
         addressBookApp.removeContact(selectedIndex);
 
@@ -221,18 +223,22 @@ class AddressBookView {
     // RENDER 
     // -----------------------------------
 
+    
+
     renderContactDetailsModule(e) {
+
 
         // get the selected index
         let selectedIndex = null;
 
         if (typeof e === 'object') {
             e.stopPropagation();
-            selectedIndex = this.getAttribute('data-index')
+            selectedIndex = e.currentTarget.getAttribute('data-index');
+             
         } else {
             selectedIndex = e;
         }
-
+       
         // get the selected contact based on the index from the controller
         const selectedItem = addressBookApp.getContact(selectedIndex);
 
@@ -241,6 +247,20 @@ class AddressBookView {
 
         // render the data on the module
         $ContactItemUI.innerHTML = `${selectedItem['fname']} <br> ${selectedItem['lname']} <br> ${selectedItem['phone']} <br> ${selectedItem['email']}`;
+
+        this.hightlightCurrentListItem(selectedIndex);
+       
+    }
+
+
+    hightlightCurrentListItem(selectedIndex) {
+        const $ContactListItems = document.getElementsByClassName('contact-list-item');
+
+        for (let i = 0, len = $ContactListItems.length; i < len; i++) {
+            $ContactListItems[i].classList.remove('active');
+        }
+
+        $ContactListItems[selectedIndex].classList.add("active")
     }
 
 
@@ -258,10 +278,7 @@ class AddressBookView {
         // ctrl
         for (let i = 0, len = contacts.length; i < len; i++) {
 
-            // list item
-            let $li = document.createElement('li');
-            $li.setAttribute('class', 'contact-list-item');
-            $li.setAttribute('data-index', i);
+          
 
             // edit icon
             let $editIcon = document.createElement('small');
@@ -283,9 +300,14 @@ class AddressBookView {
             $div.append($removeIcon);
             $div.append($editIcon);
 
+              // list item
+            let $li = document.createElement('li');
+            $li.setAttribute('class', 'contact-list-item');
+            $li.setAttribute('data-index', i);
+
 
             $li.append($div);
-            $li.addEventListener("click", this.renderContactDetailsModule);
+            $li.addEventListener("click", this.renderContactDetailsModule.bind(this));
 
             $ContactListUI.append($li);
         }

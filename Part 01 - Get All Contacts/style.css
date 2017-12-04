@@ -1,13 +1,21 @@
-body {
-    font-family: Helvetica, Arial, Serif;
-}
-
+body,
 ul,
 li,
 h1,
 h2 {
+    font-family: Helvetica, Arial, Serif;
     padding: 0;
     margin: 0;
+}
+
+body {
+    background: #039be5;
+}
+
+
+h1 {
+    background: #ffcc00;
+    padding: 5px 10px;
 }
 
 h2 {
@@ -16,16 +24,6 @@ h2 {
     border-bottom: 1px solid #cccccc;
 }
 
-button {
-    outline: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 0px;
-}
-
-button:hover {
-    opacity: 0.6;
-}
 
 li {
     padding: 5px;
@@ -34,36 +32,19 @@ li {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-li:hover {
+li:hover, .active {
     background: rgba(0, 0, 0, 0.5);
 }
 
 
-
-
-
-
 /* Contact List Module */
-
 #contact-list {
     width: 170px;
-    background: #333;
+    border: 1px solid #4fc3fc;
     color: white;
     float: left;
+    margin-left: 10px;
 }
 
 
-
-
-/* Contact Item Details Module */
-
-#contact-item-details {
-    float: left;
-    width: 200px;
-    background: #333;
-    overflow: auto;
-    color: white;
-    padding: 10px;
-    margin-left: 1px;
-}
 

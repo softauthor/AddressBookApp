@@ -86,14 +86,15 @@ class AddressBookView {
     // -----------------------------------
 
 
-    renderContactDetailsModule(e) {
+    
+     renderContactDetailsModule(e) {
 
         // get the selected index
         let selectedIndex = null;
 
         if (typeof e === 'object') {
             e.stopPropagation();
-            selectedIndex = this.getAttribute('data-index')
+            selectedIndex = e.currentTarget.getAttribute('data-index')
         } else {
             selectedIndex = e;
         }
@@ -106,7 +107,21 @@ class AddressBookView {
 
         // render the data on the module
         $ContactItemUI.innerHTML = `${selectedItem['fname']} <br> ${selectedItem['lname']} <br> ${selectedItem['phone']} <br> ${selectedItem['email']}`;
+    
+
+        this.hightlightCurrentListItem(selectedIndex);
     }
+
+    hightlightCurrentListItem(selectedIndex) {
+        const $ContactListItems = document.getElementsByClassName('contact-list-item');
+
+        for (let i = 0, len = $ContactListItems.length; i < len; i++) {
+            $ContactListItems[i].classList.remove('active');
+        }
+
+        $ContactListItems[selectedIndex].classList.add("active")
+    }
+
 
     renderContactListModule() {
 
@@ -132,7 +147,7 @@ class AddressBookView {
             $div.innerHTML = `${contacts[i]['fname']}, <strong>${contacts[i]['lname']}</strong> `;
 
             $li.append($div);
-            $li.addEventListener("click", this.renderContactDetailsModule);
+            $li.addEventListener("click", this.renderContactDetailsModule.bind(this));
 
             $ContactListUI.append($li);
         }

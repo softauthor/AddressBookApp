@@ -1,13 +1,21 @@
-body {
-    font-family: Helvetica, Arial, Serif;
-}
-
+body,
 ul,
 li,
 h1,
 h2 {
+    font-family: Helvetica, Arial, Serif;
     padding: 0;
     margin: 0;
+}
+
+body {
+    background: #039be5;
+}
+
+
+h1 {
+    background: #ffcc00;
+    padding: 5px 10px;
 }
 
 h2 {
@@ -34,10 +42,9 @@ li {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-li:hover {
+li:hover, .active {
     background: rgba(0, 0, 0, 0.5);
 }
-
 
 
 /* Add Contact Module */
@@ -45,21 +52,20 @@ li:hover {
 #add-contact-module {
     display: inline-block;
     margin-bottom: 1px;
+    margin-left: 8px;
 }
 
 #add-contact-module #open-add-contact-form-btn {
     background: #54bb7d;
     font-size: 1.5em;
-    padding: 0px 5px;
     color: white;
+    padding-bottom: 5px;
 }
 
 #add-contact-module form {
     position: absolute;
-    /*margin:0;  remove the space between the button and sub nav */
     padding: 10px;
     width: 150px;
-    /* sub nav always take the width of the main nav because it's inside it */
     background-color: #e1e1e1;
     border: 1px solid #999;
     display: none;
@@ -87,52 +93,47 @@ li:hover {
 
 
 /* Contact List Module */
-
 #contact-list {
     width: 170px;
-    background: #333;
+    border: 1px solid #4fc3fc;
     color: white;
     float: left;
+    margin-left: 10px;
 }
 
 #contact-list li:hover~#edit-contact-module {
     display: none;
 }
 
-.remove-contact-btn, .edit-contact-btn {
-	padding:2px;
+.remove-contact-btn,
+.edit-contact-btn {
+    padding: 2px;
 }
 
-.remove-contact-btn:hover{
-	background: red;
-	
+.remove-contact-btn:hover {
+    background: red;
 }
 
 .edit-contact-btn:hover {
-	background: blue;
-	
+    background: rgba(0,0,0,.5);
 }
 
 
 
 /* Contact Item Details Module */
-
 #contact-item-details {
     float: left;
-    width: 200px;
-    background: #333;
+    width: 250px;
+    border: 1px solid #4fc3fc;
     overflow: auto;
     color: white;
     padding: 10px;
     margin-left: 1px;
 }
 
-
-
 /* Edit Contact Module */
-
 #edit-contact-module {
-    display:none;
+    display: none;
     position: absolute;
     background-color: #e1e1e1;
     border: 1px solid #999;
